@@ -47,7 +47,7 @@ class AlumnoTest2 {
 		Nota notaEliminar= new Nota(0,"Lengua");
 		alumno.removeNota(notaEliminar);
 		List<Nota> notas=alumno.getNotas();
-		assertFalse(notas.contains(notaEliminar));
+		assertThat(notas,not(hasItem(notaEliminar)));
 	}
 
 	//concretamente para mi test
