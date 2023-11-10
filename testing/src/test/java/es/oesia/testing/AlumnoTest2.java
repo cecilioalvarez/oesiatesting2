@@ -56,7 +56,7 @@ class AlumnoTest2 {
 	
 		alumno= new Alumno("juan",List.of(new Nota(3,"Matematicas"),new Nota(7,"Lengua")));
 		int aprobados= alumno.getNumeroAprobados();
-		assertEquals(1,aprobados);
+		assertThat(aprobados,equalTo(1));
 	}
 	@AfterEach
 	public void finalizar() {
