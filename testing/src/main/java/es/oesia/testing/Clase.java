@@ -30,5 +30,16 @@ public class Clase {
 		this.alumnos = alumnos;
 	}
 	
-	
+	public Nota getMejorNota() {
+		
+		Nota notaMejor = new Nota(0,"Matematicas");
+		for (Alumno a: alumnos) {
+			
+			if (a.getMejorNota().esMayor(notaMejor)) {
+				
+				notaMejor=a.getMejorNota();
+			}
+		}
+		return notaMejor;
+	}
 }
