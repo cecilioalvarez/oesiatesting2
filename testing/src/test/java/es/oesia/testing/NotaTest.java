@@ -1,6 +1,7 @@
 package es.oesia.testing;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.DisplayName;
@@ -10,13 +11,26 @@ import es.oesisa.testing.Nota;
 
 class NotaTest {
 
+	// FIRST (Fast, Isolated,Repeatable, SelfValidating, Timely)
+	
+	
+	@Test
+	@DisplayName("valor de nota en rango")
+	void rangoDeValoresNotaCorrecto() {
+		
+		Nota nota1= new Nota();
+		
+		assertThrows(RuntimeException.class,()->nota1.setValor(-10));
+		assertThrows(RuntimeException.class,()->nota1.setValor(11));
+	}
+	
 	@Test
 	@DisplayName("igualdad entre dos notas")
 	void igualdadEntreDosNotas() {
-		//arrange
+		
 		Nota nota1= new Nota(7,"Matematicas");
 		Nota nota2= new Nota(7,"Matematicas");
-		//act
+		
 		boolean notasIguales= nota1.equals(nota2);
 		
 		assertTrue(notasIguales);
@@ -26,10 +40,10 @@ class NotaTest {
 	@Test
 	@DisplayName("no igualdad entre dos notas por valor")
 	void noIgualdadValor() {
-		//arrange
+		
 		Nota nota1= new Nota(7,"Matematicas");
 		Nota nota2= new Nota(8,"Matematicas");
-		//act
+		
 		boolean noIgualesValor= nota1.equals(nota2);
 		
 		assertFalse(noIgualesValor);
@@ -38,10 +52,10 @@ class NotaTest {
 	@Test
 	@DisplayName("no igualdad entre dos notas por asignatura")
 	void noIgualdadAsignatura() {
-		//arrange
+		
 		Nota nota1= new Nota(8,"Fisica");
 		Nota nota2= new Nota(8,"Matematicas");
-		//act
+		
 		boolean noIgualesAsignatura= nota1.equals(nota2);
 		
 		assertFalse(noIgualesAsignatura);
@@ -51,10 +65,10 @@ class NotaTest {
 	@Test
 	@DisplayName("una nota es mayor que otra")
 	void unaNotaEsMayorQueOtra() {
-		//arrange
+		
 		Nota nota1= new Nota(8,"Fisica");
 		Nota nota2= new Nota(9,"Matematicas");
-		//act
+		
 		boolean esNotaMayor= nota2.esMayor(nota1);
 		
 		assertTrue(esNotaMayor);
