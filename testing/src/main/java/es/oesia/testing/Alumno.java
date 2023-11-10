@@ -2,6 +2,7 @@ package es.oesia.testing;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Alumno {
 
@@ -72,4 +73,23 @@ public class Alumno {
 		return mejorNota;
 		
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(nombre);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Alumno other = (Alumno) obj;
+		return Objects.equals(nombre, other.nombre);
+	}
+	
+	
 }
