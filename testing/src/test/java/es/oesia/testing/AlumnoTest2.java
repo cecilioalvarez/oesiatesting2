@@ -2,7 +2,8 @@ package es.oesia.testing;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.hamcrest.Matchers.*;
+import static org.hamcrest.MatcherAssert.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class AlumnoTest {
+class AlumnoTest2 {
 
 	Alumno alumno;
 	@BeforeEach
@@ -34,7 +35,9 @@ class AlumnoTest {
 		Nota notaNueva= new Nota(7.5,"Historia");
 		alumno.addNota(notaNueva);
 		List<Nota> notas=alumno.getNotas();
-		assertTrue(notas.contains(notaNueva));
+		//assertTrue(notas.contains(notaNueva));
+		assertThat(notas,hasItem(notaNueva));
+		
 	}
 
 	//aqui
