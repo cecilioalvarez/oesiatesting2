@@ -1,4 +1,4 @@
-package testing;
+package es.oesisa.testing;
 
 public class Calculadora {
 
