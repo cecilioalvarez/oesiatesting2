@@ -56,4 +56,20 @@ public class Alumno {
 		}
 		return aprobados;
 	}
+	
+	public Nota getMejorNota() {
+		
+		
+		Nota mejorNota= notas.get(0);
+		
+		for (Nota nota: notas) {
+			
+			if (nota.getValor()>mejorNota.getValor()) {
+				
+				mejorNota=nota;
+			}
+		}
+		return mejorNota;
+		
+	}
 }

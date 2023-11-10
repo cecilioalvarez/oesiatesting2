@@ -1,9 +1,9 @@
 package es.oesia.testing;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.hamcrest.Matchers.*;
-import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.not;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +62,14 @@ class AlumnoTest2 {
 	public void finalizar() {
 		
 		alumno=null;
+	}
+	
+	@Test
+	void mejorNota() {
+	
+		alumno= new Alumno("juan",List.of(new Nota(3,"Matematicas"),new Nota(7,"Lengua")));
+		Nota nota= alumno.getMejorNota();
+		assertThat(nota,equalTo(new Nota(7,"Lengua")));
 	}
 
 }
