@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import es.oesisa.testing.Calculadora;
+import es.oesia.testing.Calculadora;
 
 class CalculadoraTest {
 
