@@ -34,7 +34,7 @@ class TransformadorTest {
 		List<String> lineas = new ArrayList<String>();
 
 		lineas.add("******************");
-		lineas.add("antonio,matematicas,7,5");
+		lineas.add("antonio,matematicas,7.5");
 		lineas.add("antonio,lengua,8");
 		lineas.add("-----------------");
 		lineas.add("gema,matematicas,5");
@@ -52,7 +52,12 @@ class TransformadorTest {
 
 		assertThat(2, equalTo(alumnos.size()));
 
+		assertThat (antonio.getNombre(),equalTo("antonio"));
+		assertThat (gema.getNombre(),equalTo("gema"));
 		
+		assertThat (gema.getNotas().get(0),equalTo(new Nota(5,"matematicas")));
+		assertThat (gema.getNotas().get(1),equalTo(new Nota(9,"lengua")));
+
 		assertThat (antonio.getNotas().get(0),equalTo(new Nota(7.5,"matematicas")));
 		assertThat (antonio.getNotas().get(1),equalTo(new Nota(8,"lengua")));
 
