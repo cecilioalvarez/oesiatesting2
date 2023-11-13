@@ -15,23 +15,24 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import es.oesia.testing.models2.Alumno;
 import es.oesia.testing.models2.Clase;
+import es.oesia.testing.models2.Nota;
 
 @ExtendWith(MockitoExtension.class)
 class TransformadorTest {
-	
-	
-	//ahora mismo se parece mas a una prueba de integración
+
+	// ahora mismo se parece mas a una prueba de integración
 	// que a una prueba unitaria
 	// porque estamos probando varias clases juntas
-	//estamos probando LectorFichero y Transformador
+	// estamos probando LectorFichero y Transformador
 
-	@Mock LectorFichero lector;
-	
+	@Mock
+	LectorFichero lector;
+
 	@Test
 	void getClaseTest() throws FileNotFoundException {
-		
-		List<String> lineas= new ArrayList<String>();
-		
+
+		List<String> lineas = new ArrayList<String>();
+
 		lineas.add("******************");
 		lineas.add("antonio,matematicas,7,5");
 		lineas.add("antonio,lengua,8");
@@ -39,16 +40,25 @@ class TransformadorTest {
 		lineas.add("gema,matematicas,5");
 		lineas.add("gema,lengua,9");
 		lineas.add("******************");
-		
-		
-		//simula el comportamiento del lector
+
+		// simula el comportamiento del lector
 		Mockito.when(lector.leer()).thenReturn(lineas);
+
+		Transformador tf = new Transformador(lector);
+		Clase clase = tf.getClase();
+		List<Alumno> alumnos = clase.getAlumnos();
+		Alumno antonio = alumnos.get(0);
+		Alumno gema = alumnos.get(1);
+
+		assertThat(2, equalTo(alumnos.size()));
+
 		
-		Transformador tf= new Transformador(lector);
-		Clase clase=tf.getClase();
-		List<Alumno> alumnos= clase.getAlumnos();
-		
-		assertThat(2,equalTo(alumnos.size()));
+		assertThat (antonio.getNotas().get(0),equalTo(new Nota(7.5,"matematicas")));
+		assertThat (antonio.getNotas().get(1),equalTo(new Nota(8,"lengua")));
+
+		assertThat (gema.getNotas().get(0),equalTo(new Nota(5,"matematicas")));
+		assertThat (gema.getNotas().get(1),equalTo(new Nota(9,"lengua")));
+
 	}
 
 }

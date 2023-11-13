@@ -26,9 +26,9 @@ public class LectorFichero {
 
 	public List<String> leer() throws FileNotFoundException {
 		
-		Path ruta= fichero.toPath();
+		
 		try {
-			return Files.readAllLines(ruta);
+			return Files.readAllLines(fichero.toPath());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			throw new FileNotFoundException("el fichero no existe");
