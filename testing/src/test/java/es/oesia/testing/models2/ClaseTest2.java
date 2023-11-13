@@ -3,6 +3,7 @@ package es.oesia.testing.models2;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasItem;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +54,20 @@ class ClaseTest2 {
 		
 		Clase clase = new Clase(1,lista);
 		assertThat(clase.getMejorNota(),equalTo(new Nota(10,"Matematicas")));
+		
+	}
+	
+	@Test
+	void containsAlumno() {
+		
+	
+		
+		List<Alumno> lista= new ArrayList<>();
+		lista.add(new Alumno("pepe"));
+		
+		Clase clase = new Clase(1,lista);
+		boolean contiene=clase.containsAlumno("pepe");
+		assertTrue(contiene);
 		
 	}
 

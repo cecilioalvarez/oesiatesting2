@@ -2,9 +2,10 @@ package es.oesia.testing.services;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
-import java.util.Scanner;
 
 public class LectorFichero {
 
@@ -24,14 +25,13 @@ public class LectorFichero {
 	}
 
 	public List<String> leer() throws FileNotFoundException {
-		List<String> lineas = new ArrayList<String>();
-		try (Scanner scanner = new Scanner(fichero)) {
-			while (scanner.hasNextLine()) {
-
-				String linea = scanner.nextLine();
-				lineas.add(linea);
-			}
+		
+		Path ruta= fichero.toPath();
+		try {
+			return Files.readAllLines(ruta);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			throw new FileNotFoundException("el fichero no existe");
 		}
-		return lineas;
 	}
 }

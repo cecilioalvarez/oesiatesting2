@@ -45,4 +45,14 @@ public class Clase {
 		}
 		return notaMejor;
 	}
+	
+	public boolean containsAlumno(String nombre) {
+		
+		return alumnos.contains(new Alumno(nombre));
+	}
+	
+	public Alumno getAlumnoPorNombre(String nombre) {
+		
+		return alumnos.get(alumnos.indexOf(new Alumno(nombre)));
+	}
 }

@@ -18,7 +18,6 @@ class LectorFicheroTest {
 		
 		LectorFichero lector= new LectorFichero(new File("src/test/resources/datosalumnos.txt"));
 		List<String> lineas = lector.leer();
-		
 		assertThat(7,equalTo(lineas.size()));
 		
 	}
