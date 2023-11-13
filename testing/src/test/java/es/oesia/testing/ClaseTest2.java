@@ -8,10 +8,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-class ClaseTest {
+@ExtendWith(MockitoExtension.class)
+class ClaseTest2 {
 
+	@Mock Alumno alumno1;
+	@Mock Alumno alumno2;
+	
 	@Test
 	void addAlumnoTest() {
 		
@@ -33,16 +40,12 @@ class ClaseTest {
 	@Test
 	void mejorNotaClase() {
 		
-		Alumno pedro =Mockito.mock(Alumno.class);
-		Mockito.when(pedro.getMejorNota()).thenReturn(new Nota(10,"Matematicas"));
-		
-		Alumno david = Mockito.mock(Alumno.class);
-		Mockito.when(david.getMejorNota()).thenReturn(new Nota(3,"Matematicas"));
-
-		
+	
+		Mockito.when(alumno1.getMejorNota()).thenReturn(new Nota(10,"Matematicas"));
+		Mockito.when(alumno2.getMejorNota()).thenReturn(new Nota(3,"Matematicas"));
 		List<Alumno> lista= new ArrayList<>();
-		lista.add(pedro);
-		lista.add(david);
+		lista.add(alumno1);
+		lista.add(alumno2);
 		
 		Clase clase = new Clase(1,lista);
 		assertThat(clase.getMejorNota(),equalTo(new Nota(10,"Matematicas")));
