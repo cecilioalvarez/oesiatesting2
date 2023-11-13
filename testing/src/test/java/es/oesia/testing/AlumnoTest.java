@@ -55,10 +55,19 @@ class AlumnoTest {
 		int aprobados= alumno.getNumeroAprobados();
 		assertEquals(1,aprobados);
 	}
+	@Test
+	void igualdadEntreAlumnosPorNombre() {
+		
+		Alumno alumno1= new Alumno("pedro");
+		Alumno alumno2= new Alumno("pedro");
+		boolean iguales=alumno1.equals(alumno2);
+		assertTrue(iguales);
+	}
 	@AfterEach
 	public void finalizar() {
 		
 		alumno=null;
 	}
+
 
 }

@@ -30,6 +30,9 @@ public class Clase {
 		this.alumnos = alumnos;
 	}
 	
+	public Clase() {
+		// TODO Auto-generated constructor stub
+	}
 	public Nota getMejorNota() {
 		
 		Nota notaMejor = new Nota(0,"Matematicas");

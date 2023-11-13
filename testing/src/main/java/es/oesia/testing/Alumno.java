@@ -21,6 +21,10 @@ public class Alumno {
 		this.nombre = nombre;
 	}
 
+	public Alumno() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
