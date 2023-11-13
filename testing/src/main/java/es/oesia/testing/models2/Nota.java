@@ -1,4 +1,4 @@
-package es.oesia.testing;
+package es.oesia.testing.models2;
 
 import java.util.Objects;
 

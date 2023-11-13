@@ -1,11 +1,11 @@
-package es.oesia.testing;
+package es.oesia.testing.models1;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import es.oesia.testing.Calculadora;
+import es.oesia.testing.models1.Calculadora;
 
 class CalculadoraTest {
 

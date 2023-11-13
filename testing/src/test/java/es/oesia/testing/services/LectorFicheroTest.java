@@ -1,4 +1,4 @@
-package es.oesia.testing;
+package es.oesia.testing.services;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import es.oesia.testing2.LectorFichero;
+import es.oesia.testing.services.LectorFichero;
 
 class LectorFicheroTest {
 

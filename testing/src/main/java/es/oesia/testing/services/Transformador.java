@@ -1,12 +1,11 @@
-package es.oesia.testing2;
+package es.oesia.testing.services;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
 
-import es.oesia.testing.Alumno;
-import es.oesia.testing.Clase;
-import es.oesia.testing.Nota;
+import es.oesia.testing.models2.Alumno;
+import es.oesia.testing.models2.Clase;
+import es.oesia.testing.models2.Nota;
 
 public class Transformador {
 
@@ -29,7 +28,7 @@ public class Transformador {
 
 		Clase clase = new Clase();
 
-		List<Alumno> listaAlumnos = new ArrayList<Alumno>();
+		
 		List<String> lineas = lector.leer();
 		lineas.removeIf((linea) -> linea.contains("*"));
 
@@ -42,11 +41,11 @@ public class Transformador {
 				String[] datosLinea = linea.split(",");
 				// genero el alumno
 
-				if (listaAlumnos.contains(new Alumno(datosLinea[0]))) {
+				if (clase.getAlumnos().contains(new Alumno(datosLinea[0]))) {
 					
 					
-					int posicion=listaAlumnos.indexOf(new Alumno(datosLinea[0]));
-					alumno=listaAlumnos.get(posicion);
+					int posicion=clase.getAlumnos().indexOf(new Alumno(datosLinea[0]));
+					alumno=clase.getAlumnos().get(posicion);
 					Nota nota = new Nota(Double.parseDouble(datosLinea[2]), datosLinea[1]);
 					
 					alumno.addNota(nota);
@@ -63,6 +62,7 @@ public class Transformador {
 
 
 				}
+				
 
 							
 			}

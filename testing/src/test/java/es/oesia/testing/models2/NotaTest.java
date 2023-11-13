@@ -1,4 +1,4 @@
-package es.oesia.testing;
+package es.oesia.testing.models2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -11,7 +11,7 @@ import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import es.oesia.testing.Nota;
+import es.oesia.testing.models2.Nota;
 
 class NotaTest {
 

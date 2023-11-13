@@ -1,4 +1,4 @@
-package es.oesia.testing;
+package es.oesia.testing.models2;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
@@ -12,6 +12,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import es.oesia.testing.models2.Alumno;
+import es.oesia.testing.models2.Clase;
+import es.oesia.testing.models2.Nota;
 
 @ExtendWith(MockitoExtension.class)
 class ClaseTest2 {

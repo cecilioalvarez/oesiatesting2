@@ -1,4 +1,4 @@
-package es.oesia.testing;
+package es.oesia.testing.models2;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
@@ -11,6 +11,9 @@ import java.util.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import es.oesia.testing.models2.Alumno;
+import es.oesia.testing.models2.Nota;
 
 class AlumnoTest2 {
 
